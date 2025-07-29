@@ -28,7 +28,7 @@ Substituir o trabalho manual de:
 automacao-patio/
 ├── automacao_patio.py       # Script principal
 ├── README.md
-├── requirements.txt         # (opcional)
+├── requirements.txt
 ```
 
 ---
