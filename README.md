@@ -15,7 +15,7 @@ Substituir o trabalho manual de:
 
 ## 🛠️ Tecnologias utilizadas
 
-- Python 3.x
+- Python
 - [xlwings](https://docs.xlwings.org/en/stable/) (automação Excel via Python)
 - pandas
 - glob / os / time (controle de arquivos)
