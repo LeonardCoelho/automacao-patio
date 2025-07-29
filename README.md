@@ -1,85 +1,78 @@
 # 🚛 Automação de Atualização - Controle de Pátio
 
-Este script em Python automatiza a atualização de uma planilha de **Controle de Pátio**, substituindo um processo manual de copiar e colar dados de chegada. Ele lê uma base baixada da web e cola automaticamente os dados atualizados na aba correta do arquivo principal. Isso economiza tempo, evita erros e agiliza o fluxo do time logístico.
+Este projeto automatiza a atualização de uma planilha de **Controle de Pátio**, colando automaticamente dados de chegada na aba correta de um arquivo final. Isso substitui o trabalho manual que fazemos no dia a dia na logística, economizando tempo e evitando erros.
 
 ---
 
 ## 📌 Objetivo
 
-Substituir o trabalho manual de:
-- Abrir planilha baixada com datas de chegada
-- Copiar as informações
-- Colar na aba `BASE` do controle geral, que usa `PROCV` para preencher os dados dos romaneios
+Copiar automaticamente as datas de chegada de uma base extraída do sistema para o controle principal, onde fórmulas como `PROCV` fazem o resto da mágica.
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+## 🛠️ Tecnologias
 
-- Python
-- [xlwings](https://docs.xlwings.org/en/stable/) (automação Excel via Python)
+- Python 3.x
+- [xlwings](https://docs.xlwings.org/)
 - pandas
-- glob / os / time (controle de arquivos)
+- glob / os / time
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```
 automacao-patio/
-├── automacao_patio.py       # Script principal
+├── 📁 data/                  # Contém exemplos de planilhas base (.xlsx)
+│   └── base_exemplo.xlsx
+├── 📁 images/                # Prints e imagens para README ou documentação
+│   └── print_final.jpg
+├── 📁 src/                   # Código-fonte do projeto
+│   └── atualizar_planilha.py
 ├── README.md
-├── requirements.txt
+└── requirements.txt         # Lista de dependências
 ```
 
 ---
 
 ## ▶️ Como usar
 
-1. Baixe manualmente a base do sistema (relatório do TMS) e salve na pasta `Downloads`
-2. Garanta que o arquivo de destino (controle principal) esteja fechado
-3. Rode o script com Python:
+1. Baixe a base do sistema e salve na pasta `Downloads` do seu usuário
+2. Verifique se o arquivo de destino está **fechado**
+3. Rode o script:
 
 ```bash
-python automacao_patio.py
+python src/atualizar_planilha.py
 ```
 
 4. O script vai:
-   - Encontrar automaticamente a base mais recente no `Downloads`
-   - Encontrar o arquivo de controle de pátio na pasta de rede
+   - Encontrar a base mais recente no `Downloads`
+   - Achar o arquivo de destino na pasta da rede da Arcor
    - Substituir os dados da aba `BASE` com a nova base
-   - Abrir a planilha final atualizada para revisão
+   - Abrir a planilha final atualizada
 
 ---
 
-## 📍 Requisitos
+## ✅ Benefícios
 
-- Python instalado no PC
-- Permissão de leitura/gravação na pasta de rede da Arcor
-- Excel instalado (necessário pro `xlwings` funcionar)
-
----
-
-## ⚙️ Parametrizações do Script
-
-- Nome do arquivo base: `"Controle de Patio x data ingreso do pedido"`
-- Nome da aba a ser atualizada: `"BASE"`
-- Pasta destino: `"Arcor\GC_CPS_CDs_Controle_de_Patio - Documentos\CONTROLE DE PÁTIO - 2025"`
-- O script localiza automaticamente os arquivos mais recentes com base no padrão do nome
+- Evita copiar e colar manualmente
+- Garante consistência nas atualizações
+- Dá pra rodar o script com um clique e seguir o baile no operacional
 
 ---
 
-## 💡 Benefícios
+## 📋 Exemplo visual
 
-✅ Agilidade no processo de atualização  
-✅ Redução de erro humano  
-✅ Mais tempo pra focar em análise e controle logístico  
+![Exemplo da planilha atualizada](images/print_final.jpg)
 
 ---
 
-## 👤 Autor
+## 💼 Autor
 
 **Leonardo Coelho**  
-📍 Campinas/SP  
-[LinkedIn](https://www.linkedin.com/in/leonardocoelho/)  
+[GitHub](https://github.com/LeonardCoelho) · [LinkedIn](https://www.linkedin.com/in/leonardocoelho/)  
+Campinas/SP
 
-> Projeto feito com amor (e café) pra facilitar o trampo diário na logística 🚛📊
+---
+
+> Feito pra resolver dor real do dia a dia com código na veia. 🚀
