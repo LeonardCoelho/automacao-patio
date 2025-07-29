@@ -63,7 +63,7 @@ python src/atualizar_planilha.py
 
 ## 📋 Exemplo visual
 
-![Exemplo da planilha atualizada](images/Print_final.jpg)
+![Exemplo da planilha atualizada](./images/Print_final.jpg)
 
 ---
 
